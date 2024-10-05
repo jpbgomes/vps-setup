@@ -50,3 +50,22 @@ sudo systemctl enable php8.3-fpm
 ## Install Composer
 
 [Link to Documentation](https://getcomposer.org/download/)
+
+## Install MySQL
+```
+sudo apt install mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+```
+
+## Create New User && Secure Installation
+```
+CREATE USER 'jpbgomes'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON *.* TO 'jpbgomes'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+```
+sudo mysql_secure_installation
+```
