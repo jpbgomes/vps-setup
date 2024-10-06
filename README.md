@@ -37,7 +37,7 @@ sudo apt install -y lsb-release apt-transport-https ca-certificates
 sudo wget -qO - https://packages.sury.org/apt.gpg | sudo apt-key add -
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
 
-sudo apt install -y php8.3 php8.3-cli php8.3-fpm php8.3-mysql php8.3-xml php8.3-mbstring php8.3-curl php8.3-zip
+sudo apt install -y php8.3 php8.3-cli php8.3-fpm php8.3-mysql php8.3-xml php8.3-mbstring php8.3-curl php8.3-zip libapache2-mod-php
 php -v
 ```
 
