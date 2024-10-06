@@ -96,6 +96,12 @@ sudo nano /etc/apache2/sites-available/jpbgomes.conf
 sudo a2ensite jpbgomes.conf
 sudo systemctl restart apache2
 ```
+
+Fix Permissions
+```
+sudo chown -R www-data:www-data /var/www/jpbgomes
+sudo chmod -R 755 /var/www/jpbgomes
+```
 ## Certbot
 ```
 sudo apt update
