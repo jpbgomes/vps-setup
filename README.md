@@ -69,3 +69,39 @@ EXIT;
 ```
 sudo mysql_secure_installation
 ```
+
+
+## Apache2
+```
+sudo apt install apache2
+```
+```
+sudo nano /etc/apache2/sites-available/jpbgomes.conf
+```
+```
+<VirtualHost *:80>
+    ServerName jpbgomes.com
+    ServerAlias www.jpbgomes.com
+    DocumentRoot /var/www/jpbgomes/public
+
+    <Directory /var/www/jpbgomes>
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/jpbgomes.log
+    CustomLog ${APACHE_LOG_DIR}/jpbgomes.log combined
+</VirtualHost>
+```
+```
+sudo a2ensite jpbgomes.conf
+sudo systemctl restart apache2
+```
+## Certbot
+```
+sudo apt update
+sudo apt install certbot python3-certbot-apache
+```
+
+```
+sudo certbot --apache -d jpbgomes.com -d www.jpbgomes.com
+```
