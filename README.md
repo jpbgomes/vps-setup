@@ -111,3 +111,19 @@ sudo apt install certbot python3-certbot-apache
 ```
 sudo certbot --apache -d jpbgomes.com -d www.jpbgomes.com
 ```
+
+## Crontab
+
+```
+sudo crontab -e
+```
+
+```
+0 2 * * * php /var/www/jpbgomes/artisan backup:database >> /dev/null 2>&1
+0 2 * * * php /var/www/amaisterapia/artisan backup:database >> /dev/null 2>&1
+0 2 * * * php /var/www/nortada/artisan backup:database >> /dev/null 2>&1
+```
+
+```
+sudo crontab -l
+```
